@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import QrReader from 'modern-react-qr-reader'
+import './index.css'
 
 class Test extends Component {
   constructor(props) {
@@ -27,17 +28,16 @@ class Test extends Component {
   
   render() {
     return (
-      <div className='flex flex-col w-screen h-screen bg-red-100'>
-        <div className='flex flex-row w-full h-10/12'>
+      <div className='main'>
+        <div className='cam'>
         <QrReader
           delay={300}
           facingMode={"environment"}
           onError={this.handleError}
           onScan={this.handleScan}
-          style={{ width: '25%' }}
         />
         </div>
-        <p>{this.state.result}</p>
+        <p className='result'>{this.state.result}</p>
       </div>
     )
   }
